@@ -4,7 +4,6 @@ namespace App;
 
 use App\Services\CommandLineService;
 use App\Services\HttpService;
-use phpDocumentor\Reflection\Types\Boolean;
 
 class App
 {
