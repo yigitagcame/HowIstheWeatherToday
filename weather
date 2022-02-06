@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 
 require __DIR__.'/vendor/autoload.php';
@@ -6,8 +7,11 @@ use App\App;
 use App\Services\HttpService;
 use App\Services\CommandLineService;
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->safeLoad();
+
 $httpClient = new HttpService;
-$commandLine = new CommandLineService;
+$commandLine = new CommandLineService();
 $app = new App($httpClient, $commandLine);
 
 $app->run();
