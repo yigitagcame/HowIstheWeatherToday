@@ -8,10 +8,20 @@ use App\Services\HttpService;
 class HttpServiceTest extends TestCase
 {
     /** @test */
-    public function aGetTest()
+    public function aLegitGetRequestCanBeSentSuccessfully()
     {
         $http = new HttpService();
+        $response = $http->get('https://google.com');
+    
+        $this->assertNotEquals(false, $response);
+    }
 
-        $this->assertEquals(true, $http->get());
+    /** @test */
+    public function aNonlegitGetRequestCanNotBeSentSuccessfully()
+    {
+        $http = new HttpService();
+        $response = $http->get('https://google');
+    
+        $this->assertEquals(false, $response);
     }
 }
