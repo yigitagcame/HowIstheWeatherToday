@@ -4,8 +4,10 @@ require __DIR__.'/vendor/autoload.php';
 
 use App\App;
 use App\Services\HttpService;
+use App\Services\CommandLineService;
 
 $httpClient = new HttpService;
-$app = new App($httpClient);
+$commandLine = new CommandLineService;
+$app = new App($httpClient, $commandLine);
 
 $app->run();
