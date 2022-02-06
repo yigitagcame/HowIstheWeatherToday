@@ -13,8 +13,8 @@ How Is the Weather is an cli tool to check weather by city name
 composer install
 ```
 ## Configuration
-- Rename .env.example to .env at root of the project
-- Edit .env file and set reuqired values.
+- Rename .env.example file to .env at root of the project
+- Edit .env file and set required values.
 
 ## Run
 To check weather in any city, you may run "php weather --city={cityName}" in project root folder. Example is below
